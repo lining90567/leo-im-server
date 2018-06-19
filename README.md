@@ -27,30 +27,33 @@ Leo-IM是基于Java语言、Netty框架、Vue+Element-UI开发的轻量级IM，�
 
 - 安装netty-rest-server到本地仓库
 
-mvn install:install-file -Dfile=netty-rest-server-1.0.jar -DgroupId=org.leo -DartifactId=netty-rest-server -Dversion=1.0 -Dpackaging=jar
+	mvn install:install-file -Dfile=netty-rest-server-1.0.jar -DgroupId=org.leo -DartifactId=netty-rest-server -Dversion=1.0 -Dpackaging=jar
 
 - 创建数据库，并设置字符集（my.cnf或my.ini）
 
-[client]
-default-character-set=utf8mb4
+	[client]
+	default-character-set=utf8mb4
 
-[mysqld]
-character-set-client-handshake = FALSE
-character-set-server = utf8mb4
-collation-server = utf8mb4_unicode_ci
-init_connect=’SET NAMES utf8mb4'
+	[mysqld]
+	character-set-client-handshake = FALSE
 
-[mysql]
-default-character-set=utf8mb4
+	character-set-server = utf8mb4
+
+	collation-server = utf8mb4_unicode_ci
+
+	init_connect=’SET NAMES utf8mb4'
+
+	[mysql]
+	default-character-set=utf8mb4
 
 - 构建
 
-mvn package
+	mvn package
 
 - 部署
 
-解压leo-im-1.0.zip，修改conf/app.conf的相关配置
+	解压leo-im-1.0.zip，修改conf/app.conf的相关配置
 
 - 启动
 
-nohup bin/run.sh >/dev/null 2>&1 &
+	nohup bin/run.sh >/dev/null 2>&1 &
