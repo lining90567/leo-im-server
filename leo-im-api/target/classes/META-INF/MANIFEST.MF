@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Built-By: Administrator
+Class-Path: leo-im-common-1.0.jar slf4j-api-1.7.25.jar logback-classic
+ -1.2.3.jar logback-core-1.2.3.jar
+Build-Jdk: 1.8.0_131
+Created-By: Maven Integration for Eclipse
+Main-Class: org.leo.im.starter.App
+

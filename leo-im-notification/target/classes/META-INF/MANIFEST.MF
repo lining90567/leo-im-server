@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: Administrator
+Class-Path: jedis-2.9.0.jar commons-pool2-2.4.2.jar fastjson-1.2.47.ja
+ r slf4j-api-1.7.25.jar logback-classic-1.2.3.jar logback-core-1.2.3.j
+ ar
+Build-Jdk: 1.8.0_131
+Created-By: Maven Integration for Eclipse
+Main-Class: org.leo.im.starter.App
+
