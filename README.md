@@ -8,33 +8,28 @@ Leo-IM是基于Java语言、Netty框架、Vue+Element-UI开发的轻量级IM，�
 
 [点击体验leo-im](http://123.207.147.138:8000)
 
--演示用户1：用户名 test1，口令 123456
-
--演示用户2：用户名 test2，口令 123456
-
--演示用户3：用户名 test3，口令 123456
+- 演示用户1：用户名 test1，口令 123456
+- 演示用户2：用户名 test2，口令 123456
+- 演示用户3：用户名 test3，口令 123456
 
 ## 运行环境要求
 
--服务端：Java8、MySQL5.5+
-
--客户端：Chrome、IE10+
+- 服务端：Java8、MySQL5.5+
+- 客户端：Chrome、IE10+
 
 ## 主要功能
 
--私聊
-
--群聊
-
--文字、表情、图片、文件
+- 私聊
+- 群聊
+- 文字、表情、图片、文件
 
 ## 构建与部署
 
--安装netty-rest-server到本地仓库
+- 安装netty-rest-server到本地仓库
 
 mvn install:install-file -Dfile=netty-rest-server-1.0.jar -DgroupId=org.leo -DartifactId=netty-rest-server -Dversion=1.0 -Dpackaging=jar
 
--创建数据库，并设置字符集（my.cnf或my.ini）
+- 创建数据库，并设置字符集（my.cnf或my.ini）
 
 [client]
 default-character-set=utf8mb4
@@ -48,16 +43,14 @@ init_connect=’SET NAMES utf8mb4'
 [mysql]
 default-character-set=utf8mb4
 
--构建
+- 构建
 
 mvn package
 
--部署
+- 部署
 
 解压leo-im-1.0.zip，修改conf/app.conf的相关配置
 
--启动
+- 启动
 
 nohup bin/run.sh >/dev/null 2>&1 &
-
-
