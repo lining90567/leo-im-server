@@ -57,3 +57,7 @@ Leo-IM是基于Java语言、Netty框架、Vue+Element-UI开发的轻量级IM，�
 - 启动
 
 	nohup bin/run.sh >/dev/null 2>&1 &
+	
+## 联系方式
+- **邮箱** - lining90567@sina.com
+- **QQ** - 328616209
