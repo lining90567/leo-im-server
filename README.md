@@ -34,9 +34,11 @@ Leo-IM是基于Java语言、Netty框架、Vue+Element-UI开发的轻量级IM，�
 - 创建数据库，并设置字符集（my.cnf或my.ini）
 
 	[client]
+	
 	default-character-set=utf8mb4
 
 	[mysqld]
+	
 	character-set-client-handshake = FALSE
 
 	character-set-server = utf8mb4
@@ -46,6 +48,7 @@ Leo-IM是基于Java语言、Netty框架、Vue+Element-UI开发的轻量级IM，�
 	init_connect=’SET NAMES utf8mb4'
 
 	[mysql]
+	
 	default-character-set=utf8mb4
 
 - 构建
