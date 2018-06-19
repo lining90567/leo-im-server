@@ -1,4 +1,4 @@
-# [![Leo-IM](https://raw.githubusercontent.com/wiki/lining90567/leo-im-server/leo-im.png)]
+# ![Leo-IM](https://raw.githubusercontent.com/wiki/lining90567/leo-im-server/leo-im.png)
 
 Leo-IM，开源好用的IM。
 
