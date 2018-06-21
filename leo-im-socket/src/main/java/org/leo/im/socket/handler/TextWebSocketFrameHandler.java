@@ -86,23 +86,13 @@ public final class TextWebSocketFrameHandler extends SimpleChannelInboundHandler
 
     @Override
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
-        String channelId = ctx.channel().id().asShortText();
-        ctx.close();
-        String userId = ChannelsHolder.getUserIdByChannelId(channelId);
-        ChannelsHolder.removeChannel(channelId);
-        
-        // 更新用户在线状态
-        if(userId != null) {
-            UserService serviceProxy = ServiceProxy.newProxyInstance(ServiceFactory.createUserService());
-            UserDTO dto = new UserDTO();
-            dto.setId(userId);
-            dto.setOnlineStatus("offline");
-            if(serviceProxy.updateUser(dto, false) != null) {
-                NotificationEvent event = new OnlineStatusChangedEvent(dto.getId(), dto.getOnlineStatus());
-                event.trigger();
-            }
-        }
-        
+        super.handlerRemoved(ctx);
+    }
+    
+    @Override
+    public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+        this.clientOffline(ctx);
+        super.channelInactive(ctx);
     }
 
     /**
@@ -268,6 +258,29 @@ public final class TextWebSocketFrameHandler extends SimpleChannelInboundHandler
         if(cg != null) {
             cg.remove(channel);
         }
+    }
+    
+    /**
+     * 客户端下线
+     * @param ctx
+     */
+    private void clientOffline(ChannelHandlerContext ctx) {
+        String channelId = ctx.channel().id().asShortText();
+        ctx.close();
+        String userId = ChannelsHolder.getUserIdByChannelId(channelId);
+        ChannelsHolder.removeChannel(channelId);
+        
+        // 更新用户在线状态
+        if(userId != null) {
+            UserService serviceProxy = ServiceProxy.newProxyInstance(ServiceFactory.createUserService());
+            UserDTO dto = new UserDTO();
+            dto.setId(userId);
+            dto.setOnlineStatus("offline");
+            if(serviceProxy.updateUser(dto, false) != null) {
+                NotificationEvent event = new OnlineStatusChangedEvent(dto.getId(), dto.getOnlineStatus());
+                event.trigger();
+            }
+        }        
     }
 
 }
