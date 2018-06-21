@@ -90,7 +90,6 @@ public final class TextWebSocketFrameHandler extends SimpleChannelInboundHandler
         ctx.close();
         String userId = ChannelsHolder.getUserIdByChannelId(channelId);
         ChannelsHolder.removeChannel(channelId);
-        ChannelsHolder.removeChannel(channelId);
         
         // 更新用户在线状态
         if(userId != null) {
