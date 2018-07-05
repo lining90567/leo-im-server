@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.LinkedBlockingQueue;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,7 +53,7 @@ public class QueuePublisher implements Publisher {
     public void publish(String channel, String message) {
         BlockingQueue<String> queue = channels.get(message);
         if (queue == null) {
-            queue = new ArrayBlockingQueue<String>(QUEUE_CAPACITY);
+            queue = new LinkedBlockingQueue<String>(QUEUE_CAPACITY);
             BlockingQueue<String> returnQueue = this.channels.putIfAbsent(channel, queue);
             if (returnQueue != null) {
                 queue = returnQueue;
