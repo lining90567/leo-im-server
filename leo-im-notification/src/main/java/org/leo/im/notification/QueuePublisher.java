@@ -1,7 +1,6 @@
 package org.leo.im.notification;
 
 import java.util.Map;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -75,7 +74,7 @@ public class QueuePublisher implements Publisher {
     @Override
     public void subscribe(Subscriber subscriber, String... subscribeChannels) {
         for (String channel : subscribeChannels) {
-            BlockingQueue<String> queue = new ArrayBlockingQueue<>(QUEUE_CAPACITY);
+            BlockingQueue<String> queue = new LinkedBlockingQueue<>(QUEUE_CAPACITY);
             BlockingQueue<String> returnQueue = this.channels.putIfAbsent(channel, queue);
             final BlockingQueue<String> subscribeQueue = returnQueue != null ? returnQueue : queue;
             Thread thread = new Thread(() -> {
