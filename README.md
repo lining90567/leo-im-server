@@ -6,7 +6,7 @@ Leo-IM是基于Java语言、Netty框架、Vue+Element-UI开发的轻量级IM，�
 
 ## 在线演示
 
-演示地址：<a href="http://123.207.147.138:8000" target="_blank">http://123.207.147.138:8000</a>
+演示地址：<a href="http://43.138.44.47:8000" target="_blank">http://43.138.44.47:8000</a>
 
 建议使用Chrome浏览器
 
@@ -65,7 +65,7 @@ Leo-IM是基于Java语言、Netty框架、Vue+Element-UI开发的轻量级IM，�
 	
 - Web端代码
 	
-	<a href="http://123.207.147.138:8000" target="_blank">https://github.com/lining90567/leo-im-web</a>
+	<a href="http://43.138.44.47:8000" target="_blank">https://github.com/lining90567/leo-im-web</a>
 	
 ## 联系方式
 - **邮箱** - lining90567@sina.com
